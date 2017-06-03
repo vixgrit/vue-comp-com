@@ -17,11 +17,13 @@
     },
     methods: {
       switchName() {
-        return this.myName.split('').reverse().join('');
+        return this.nameProxy().split('').reverse().join('');
       },
       resetName() {
-        this.myName = 'Max';
-        this.$emit('nameWasReset', this.myName);
+        this.$emit('nameWasReset', 'Max');
+      },
+      nameProxy() {
+        return this.myName;
       }
     }
   }
