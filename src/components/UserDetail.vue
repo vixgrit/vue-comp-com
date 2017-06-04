@@ -4,6 +4,7 @@
     <p>Many Details</p>
     <p>User name: {{ switchName() }}</p>
     <button @click="resetName">Reset Name</button>
+    <button @click="resetFn()">Reset Name</button>
   </div>
 </template>
 
@@ -13,17 +14,15 @@
       myName: {
         type: String,
         default: 'Max'
-      }
+      },
+      resetFn: Function
     },
     methods: {
       switchName() {
-        return this.nameProxy().split('').reverse().join('');
+        return this.myName.split('').reverse().join('');
       },
       resetName() {
         this.$emit('nameWasReset', 'Max');
-      },
-      nameProxy() {
-        return this.myName;
       }
     }
   }
