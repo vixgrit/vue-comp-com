@@ -20,7 +20,8 @@
       editAge() {
         this.agePassedIn = 30;
         // this.$emit('ageWasEdited', this.userAge);
-        eventBus.$emit('ageWasEdited', this.agePassedIn);
+        // eventBus.$emit('ageWasEdited', this.agePassedIn);
+        eventBus.changeAge(this.agePassedIn);
       }
     }
   }
